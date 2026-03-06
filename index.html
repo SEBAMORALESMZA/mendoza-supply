@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MENDOZA SUPPLY | Importados & Agro</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Teko:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --negro: #080C10;
+  --carbon: #10161E;
+  --carbon2: #161E2A;
+  --rojo: #E8192C;
+  --rojo-suave: rgba(232,25,44,0.12);
+  --blanco: #FFFFFF;
+  --gris: #8A95A5;
+  --gris-claro: #C8D0DB;
+  --verde-wa: #25D366;
+  --oro: #F0A500;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--negro);
+  color: var(--blanco);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  background: rgba(8,12,16,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232,25,44,0.2);
+  padding: 0 28px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  display: flex; align-items: baseline; gap: 4px;
+}
+.nav-logo-main {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--blanco);
+}
+.nav-logo-main span { color: var(--rojo); }
+.nav-logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin-left: 6px;
+}
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-badge {
+  display: none;
+  background: var(--rojo-suave);
+  border: 1px solid rgba(232,25,44,0.3);
+  color: var(--rojo);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+@media(min-width:600px){ .nav-badge { display:block; } }
+.nav-wa-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--verde-wa);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-wa-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,25,44,0.15) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px),
+    var(--negro);
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(240,165,0,0.1);
+  border: 1px solid rgba(240,165,0,0.3);
+  color: var(--oro);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 2px;
+  margin-bottom: 28px;
+  animation: fadeDown 0.5s ease both;
+}
+
+.hero-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 11vw, 8.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+.hero-title .line2 { color: var(--rojo); display: block; }
+
+.hero-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--gris-claro);
+  max-width: 600px;
+  line-height: 1.65;
+  margin: 24px auto 40px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+.hero-tagline strong { color: var(--blanco); }
+
+.hero-cats {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  margin-bottom: 44px;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+.hero-cat {
+  background: var(--carbon2);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--gris-claro);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 2px;
+}
+.hero-cat.hot {
+  background: var(--rojo-suave);
+  border-color: rgba(232,25,44,0.35);
+  color: #FF6B7A;
+}
+
+.hero-btns {
+  display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+.btn-rojo {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--rojo);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(232,25,44,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-rojo:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(232,25,44,0.5); }
+
+.btn-wa-hero {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--verde-wa);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-wa-hero:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(37,211,102,0.45); }
+
+/* scroll hint */
+.scroll-hint {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: var(--gris); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  animation: fadeUp 1s ease 1s both;
+}
+.scroll-arrow { width: 20px; height: 20px; border-right: 2px solid var(--gris); border-bottom: 2px solid var(--gris); transform: rotate(45deg); animation: bounce 1.5s infinite; }
+@keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)} }
+
+/* ── TICKER ── */
+.ticker-wrap {
+  background: var(--rojo);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 30s linear infinite;
+}
+.ticker-item {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0 40px;
+  color: #fff;
+}
+.ticker-sep { color: rgba(255,255,255,0.4); }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── ESTRELLA (SILOBOLSAS) ── */
+.star-section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sec-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 10px;
+}
+.sec-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.sec-desc {
+  color: var(--gris);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 50px;
+}
+
+.star-card {
+  background: var(--carbon);
+  border: 1px solid rgba(232,25,44,0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  box-shadow: 0 8px 48px rgba(232,25,44,0.12);
+}
+@media(max-width:700px){ .star-card { grid-template-columns: 1fr; } }
+
+.star-visual {
+  background: linear-gradient(135deg, #0D1F0D, #1A3A1A);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 7rem;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.star-visual::before {
+  content: 'PRODUCTO ESTRELLA';
+  position: absolute; top: 20px; left: -30px;
+  background: var(--rojo);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  padding: 6px 48px;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  white-space: nowrap;
+}
+.star-body { padding: 40px 36px; display: flex; flex-direction: column; justify-content: center; }
+.star-badge {
+  display: inline-block;
+  background: rgba(240,165,0,0.12);
+  border: 1px solid rgba(240,165,0,0.3);
+  color: var(--oro);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+.star-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.star-desc {
+  color: var(--gris);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.star-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.spec-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 4px;
+  padding: 10px 14px;
+}
+.spec-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin-bottom: 3px;
+}
+.spec-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--blanco);
+}
+.btn-consultar {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  background: var(--verde-wa);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-consultar:hover { opacity: 0.88; transform: translateY(-2px); }
+
+/* ── CATEGORÍAS ── */
+.cats-section {
+  background: var(--carbon);
+  padding: 100px 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.cats-inner { max-width: 1100px; margin: 0 auto; }
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 50px;
+}
+.cat-card {
+  background: var(--carbon2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 28px 22px;
+  cursor: pointer;
+  transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+  text-decoration: none;
+  display: block;
+}
+.cat-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(232,25,44,0.4);
+  box-shadow: 0 8px 32px rgba(232,25,44,0.1);
+}
+.cat-icon { font-size: 2.6rem; margin-bottom: 14px; display: block; }
+.cat-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--blanco);
+  margin-bottom: 6px;
+}
+.cat-items {
+  font-size: 0.82rem;
+  color: var(--gris);
+  line-height: 1.6;
+}
+.cat-tag-hot {
+  display: inline-block;
+  background: var(--rojo-suave);
+  border: 1px solid rgba(232,25,44,0.3);
+  color: #FF6B7A;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+/* ── PRODUCTOS DESTACADOS ── */
+.prods-section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
+.prods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 50px;
+}
+.prod-card {
+  background: var(--carbon);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.22s, border-color 0.22s;
+}
+.prod-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.15); }
+.prod-visual {
+  height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4.5rem;
+  position: relative;
+}
+.pv1 { background: linear-gradient(135deg,#1A1A2E,#16213E); }
+.pv2 { background: linear-gradient(135deg,#0D2137,#1565C0); }
+.pv3 { background: linear-gradient(135deg,#1A0A00,#7C3300); }
+.pv4 { background: linear-gradient(135deg,#0A1A0A,#1B5E20); }
+.pv5 { background: linear-gradient(135deg,#1C1C1C,#424242); }
+.pv6 { background: linear-gradient(135deg,#1A0A1A,#6A1B9A); }
+.prod-new {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--rojo);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+.prod-body { padding: 18px 20px; }
+.prod-cat {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 6px;
+}
+.prod-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.prod-desc {
+  font-size: 0.85rem;
+  color: var(--gris);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.prod-btn {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  background: rgba(37,211,102,0.1);
+  border: 1px solid rgba(37,211,102,0.3);
+  color: var(--verde-wa);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.prod-btn:hover { background: var(--verde-wa); color: #fff; }
+
+/* ── POR QUÉ ── */
+.why-section {
+  background: var(--carbon);
+  padding: 100px 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.why-inner { max-width: 1100px; margin: 0 auto; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 50px;
+}
+.why-item {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.why-num {
+  font-family: 'Teko', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(232,25,44,0.2);
+  letter-spacing: 0.02em;
+}
+.why-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.why-text { font-size: 0.9rem; color: var(--gris); line-height: 1.65; }
+
+/* ── CTA ── */
+.cta-section {
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(232,25,44,0.18) 0%, transparent 70%),
+    var(--negro);
+}
+.cta-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 7vw, 5.5rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-bottom: 20px;
+  animation: fadeUp 0.6s ease both;
+}
+.cta-title span { color: var(--rojo); }
+.cta-sub {
+  font-size: 1.05rem;
+  color: var(--gris);
+  margin-bottom: 44px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+.cta-wa-big {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--verde-wa);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 20px 48px;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 6px 40px rgba(37,211,102,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-wa-big:hover { transform: scale(1.04); box-shadow: 0 10px 50px rgba(37,211,102,0.5); }
+
+/* ── FOOTER ── */
+footer {
+  background: #04070B;
+  padding: 44px 20px 32px;
+  border-top: 1px solid rgba(232,25,44,0.15);
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+}
+.footer-brand {}
+.footer-logo {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  color: var(--blanco);
+  margin-bottom: 6px;
+}
+.footer-logo span { color: var(--rojo); }
+.footer-slogan { font-size: 0.82rem; color: var(--gris); letter-spacing: 0.06em; }
+.footer-contact { display: flex; flex-direction: column; gap: 10px; }
+.footer-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(37,211,102,0.1);
+  border: 1px solid rgba(37,211,102,0.25);
+  color: var(--verde-wa);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.footer-wa:hover { background: rgba(37,211,102,0.2); }
+.footer-loc { font-size: 0.85rem; color: var(--gris); }
+.footer-bottom {
+  max-width: 1100px;
+  margin: 32px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: rgba(138,149,165,0.5);
+}
+
+/* ── FLOAT WA ── */
+.float-wa {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 999;
+  width: 60px; height: 60px;
+  background: var(--verde-wa);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  animation: pulse-wa 2.5s infinite;
+}
+.float-wa svg { width: 28px; height: 28px; }
+
+/* ── ANIMACIONES ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity:0; transform:translateY(-14px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes pulse-wa {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+  50%      { box-shadow: 0 4px 36px rgba(37,211,102,0.85); }
+}
+
+/* ── WA SVG HELPER ── */
+.wa-svg { display:inline-block; width:18px; height:18px; vertical-align:middle; flex-shrink:0; }
+</style>
+</head>
+<body>
+
+<!-- SVG DEFS -->
+<svg style="display:none">
+  <symbol id="ico-wa" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </symbol>
+  <symbol id="ico-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-logo-main">MENDOZA <span>SUPPLY</span></span>
+    <span class="nav-logo-sub">Importados & Agro</span>
+  </div>
+  <div class="nav-right">
+    <span class="nav-badge">📦 Mendoza, Argentina</span>
+    <a class="nav-wa-btn" href="https://wa.me/5492614000000?text=Hola%20Mendoza%20Supply!%20Vi%20su%20catálogo%20y%20quiero%20consultar." target="_blank">
+      <svg class="wa-svg"><use href="#ico-wa"/></svg> Consultar
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">⚡ Importados Directos · Mendoza · Envíos a Todo el País</div>
+  <h1 class="hero-title">
+    MENDOZA
+    <span class="line2">SUPPLY</span>
+  </h1>
+  <p class="hero-tagline">
+    Tu proveedor de <strong>silobolsas, nylons, herramientas importadas</strong> y mucho más.
+    Calidad garantizada, precio de importador.
+  </p>
+  <div class="hero-cats">
+    <span class="hero-cat hot">🌾 Silobolsas — Producto Estrella</span>
+    <span class="hero-cat">🛵 Vehículos Eléctricos</span>
+    <span class="hero-cat">🔧 Herramientas</span>
+    <span class="hero-cat">❄️ Climatización</span>
+    <span class="hero-cat">📱 Electrónica</span>
+    <span class="hero-cat">🪑 Hogar & Más</span>
+  </div>
+  <div class="hero-btns">
+    <a href="#categorias" class="btn-rojo">
+      <svg class="wa-svg"><use href="#ico-arrow"/></svg>
+      Ver Catálogo
+    </a>
+    <a href="https://wa.me/5492614000000?text=Hola!%20Quiero%20pedir%20un%20presupuesto." target="_blank" class="btn-wa-hero">
+      <svg class="wa-svg"><use href="#ico-wa"/></svg>
+      Pedir Presupuesto
+    </a>
+  </div>
+  <div class="scroll-hint">
+    <span>Explorar</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">🌾 SILOBOLSAS 60 MTS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🛵 MONOPATINES ELÉCTRICOS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🔧 MOTOSIERRAS IMPORTADAS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">❄️ VENTILADORES & CALOVENTORES <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🌾 NYLON AGRO <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">💡 REFLECTORES SOLARES <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📱 CELULARES & ACCESORIOS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🏠 ARTÍCULOS DE HOGAR <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🌾 SILOBOLSAS 60 MTS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🛵 MONOPATINES ELÉCTRICOS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🔧 MOTOSIERRAS IMPORTADAS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">❄️ VENTILADORES & CALOVENTORES <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🌾 NYLON AGRO <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">💡 REFLECTORES SOLARES <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📱 CELULARES & ACCESORIOS <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🏠 ARTÍCULOS DE HOGAR <span class="ticker-sep">·</span></span>
+  </div>
+</div>
+
+<!-- PRODUCTO ESTRELLA: SILOBOLSAS -->
+<section style="background: var(--negro); padding-top: 100px; padding-bottom: 20px;">
+<div class="star-section" style="padding-top:0;">
+  <p class="sec-tag">⭐ Nuestro Producto Estrella</p>
+  <h2 class="sec-title">Silobolsas &<br>Nylon Agrícola</h2>
+  <p class="sec-desc">Líderes en la provisión de silobolsas en Mendoza. Stock permanente, entrega rápida y el mejor precio del mercado para productores grandes y pequeños.</p>
+
+  <div class="star-card">
+    <div class="star-visual">🌾</div>
+    <div class="star-body">
+      <span class="star-badge">🥇 Más Vendido en Mendoza</span>
+      <h3 class="star-title">Silobolsa<br>60 Metros</h3>
+      <p class="star-desc">Silobolsa de alta resistencia para almacenamiento de granos, forraje y subproductos agrícolas. Material de primera calidad con tratamiento UV.</p>
+      <div class="star-specs">
+        <div class="spec-item">
+          <div class="spec-label">Largo</div>
+          <div class="spec-val">60 mts</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Diámetro</div>
+          <div class="spec-val">9 pies</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Material</div>
+          <div class="spec-val">PE triple capa</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">UV</div>
+          <div class="spec-val">Protección total</div>
+        </div>
+      </div>
+      <a class="btn-consultar" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20consultar%20disponibilidad%20y%20precio%20de%20silobolsas." target="_blank">
+        <svg class="wa-svg"><use href="#ico-wa"/></svg>
+        Consultar Stock y Precio
+      </a>
+    </div>
+  </div>
+
+  <!-- Nylon también -->
+  <div style="margin-top: 20px; background: var(--carbon); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 28px 32px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
+    <div>
+      <p class="sec-tag" style="margin-bottom:6px;">También disponible</p>
+      <h3 style="font-family:'Oswald',sans-serif; font-size:1.5rem; font-weight:700; text-transform:uppercase; margin-bottom:8px;">Nylon Agrícola & Plástico Negro</h3>
+      <p style="color:var(--gris); font-size:0.9rem; max-width:480px;">Rollos de nylon para cobertura de suelos, invernaderos y silos. Distintos calibres y anchos según necesidad.</p>
+    </div>
+    <a class="btn-consultar" style="white-space:nowrap;" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20nylon%20agrícola." target="_blank">
+      <svg class="wa-svg"><use href="#ico-wa"/></svg>
+      Consultar
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- CATEGORÍAS -->
+<section id="categorias" style="background: var(--negro); padding-bottom: 0;">
+<div class="cats-section">
+  <div class="cats-inner">
+    <p class="sec-tag">📦 Todo Nuestro Stock</p>
+    <h2 class="sec-title">Categorías<br>Disponibles</h2>
+    <p class="sec-desc" style="margin-bottom:0;">Hacé clic en cualquier categoría para consultar disponibilidad y precios por WhatsApp.</p>
+
+    <div class="cats-grid">
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20silobolsas%20y%20nylon." target="_blank">
+        <div class="cat-tag-hot">⭐ Producto Estrella</div>
+        <span class="cat-icon">🌾</span>
+        <div class="cat-name">Agro & Silobolsas</div>
+        <div class="cat-items">Silobolsas 60m · Nylon agrícola · Plástico negro · Cobertura suelos</div>
+      </a>
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20vehículos%20eléctricos." target="_blank">
+        <span class="cat-icon">🛵</span>
+        <div class="cat-name">Vehículos Eléctricos</div>
+        <div class="cat-items">Monopatines · Bicicletas eléctricas · Scooters · Accesorios</div>
+      </a>
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20herramientas%20y%20maquinaria." target="_blank">
+        <span class="cat-icon">🔧</span>
+        <div class="cat-name">Herramientas & Maquinaria</div>
+        <div class="cat-items">Motosierras · Desmalezadoras · Herramientas importadas · Accesorios</div>
+      </a>
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20climatización." target="_blank">
+        <span class="cat-icon">❄️</span>
+        <div class="cat-name">Climatización</div>
+        <div class="cat-items">Ventiladores · Caloventores · Estufas · Calefactores a gas</div>
+      </a>
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20electrónica%20y%20celulares." target="_blank">
+        <span class="cat-icon">📱</span>
+        <div class="cat-name">Electrónica</div>
+        <div class="cat-items">Celulares · Luces de emergencia · Reflectores solares · Cargadores</div>
+      </a>
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20artículos%20de%20hogar." target="_blank">
+        <span class="cat-icon">🏠</span>
+        <div class="cat-name">Hogar & Temporada</div>
+        <div class="cat-items">Frazadas · Sillas · Tuppers · Artículos de temporada · Plásticos</div>
+      </a>
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20objetos%20plásticos." target="_blank">
+        <span class="cat-icon">🪣</span>
+        <div class="cat-name">Plásticos & Envases</div>
+        <div class="cat-items">Objetos plásticos · Baldes · Contenedores · Bolsas · Tupperware</div>
+      </a>
+
+      <a class="cat-card" href="https://wa.me/5492614000000?text=Hola!%20Quiero%20info%20sobre%20iluminación%20solar." target="_blank">
+        <span class="cat-icon">💡</span>
+        <div class="cat-name">Iluminación Solar</div>
+        <div class="cat-items">Reflectores solares · Luces de emergencia · Paneles · Linternas</div>
+      </a>
+
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PRODUCTOS DESTACADOS -->
+<section style="background: var(--negro);">
+<div class="prods-section">
+  <p class="sec-tag">🔥 Más Consultados Esta Semana</p>
+  <h2 class="sec-title">Productos<br>Destacados</h2>
+  <p class="sec-desc">Stock disponible en Mendoza. Consultá precios actualizados por WhatsApp.</p>
+
+  <div class="prods-grid">
+
+    <div class="prod-card">
+      <div class="prod-visual pv4"><span>🌾</span><span class="prod-new">🥇 N°1</span></div>
+      <div class="prod-body">
+        <div class="prod-cat">Agro</div>
+        <div class="prod-name">Silobolsa 9×60 mts</div>
+        <div class="prod-desc">Triple capa, tratamiento UV, alta resistencia al desgarro. Ideal para granos y forraje.</div>
+        <a class="prod-btn" href="https://wa.me/5492614000000?text=Consulto%20precio%20silobolsa%209x60" target="_blank"><svg class="wa-svg"><use href="#ico-wa"/></svg> Consultar</a>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-visual pv2"><span>🛵</span><span class="prod-new">NUEVO</span></div>
+      <div class="prod-body">
+        <div class="prod-cat">Vehículos Eléctricos</div>
+        <div class="prod-name">Monopatín Eléctrico</div>
+        <div class="prod-desc">Autonomía 25-35 km, velocidad máx 25 km/h. Plegable, ideal para ciudad.</div>
+        <a class="prod-btn" href="https://wa.me/5492614000000?text=Consulto%20precio%20monopatin%20electrico" target="_blank"><svg class="wa-svg"><use href="#ico-wa"/></svg> Consultar</a>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-visual pv3"><span>🔧</span></div>
+      <div class="prod-body">
+        <div class="prod-cat">Herramientas</div>
+        <div class="prod-name">Motosierra Importada</div>
+        <div class="prod-desc">Alta potencia, bajo peso. Ideal para poda, tala y trabajos forestales.</div>
+        <a class="prod-btn" href="https://wa.me/5492614000000?text=Consulto%20precio%20motosierra" target="_blank"><svg class="wa-svg"><use href="#ico-wa"/></svg> Consultar</a>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-visual pv1"><span>💡</span><span class="prod-new">HOT</span></div>
+      <div class="prod-body">
+        <div class="prod-cat">Iluminación Solar</div>
+        <div class="prod-name">Reflector Solar LED</div>
+        <div class="prod-desc">200W equivalente, sensor automático, resistente a la intemperie. 0 costo de luz.</div>
+        <a class="prod-btn" href="https://wa.me/5492614000000?text=Consulto%20precio%20reflector%20solar" target="_blank"><svg class="wa-svg"><use href="#ico-wa"/></svg> Consultar</a>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-visual pv5"><span>❄️</span></div>
+      <div class="prod-body">
+        <div class="prod-cat">Climatización</div>
+        <div class="prod-name">Calefactor / Estufa</div>
+        <div class="prod-desc">Modelos a gas, eléctricos y caloventores. Amplio stock para temporada invernal.</div>
+        <a class="prod-btn" href="https://wa.me/5492614000000?text=Consulto%20precio%20calefactor" target="_blank"><svg class="wa-svg"><use href="#ico-wa"/></svg> Consultar</a>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-visual pv6"><span>📱</span><span class="prod-new">NUEVO</span></div>
+      <div class="prod-body">
+        <div class="prod-cat">Electrónica</div>
+        <div class="prod-name">Celulares Importados</div>
+        <div class="prod-desc">Smartphones a precio de importación directa. Modelos actualizados con garantía.</div>
+        <a class="prod-btn" href="https://wa.me/5492614000000?text=Consulto%20celulares%20disponibles" target="_blank"><svg class="wa-svg"><use href="#ico-wa"/></svg> Consultar</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- POR QUÉ ELEGIRNOS -->
+<div class="why-section">
+  <div class="why-inner">
+    <p class="sec-tag">✅ Nuestras Ventajas</p>
+    <h2 class="sec-title">¿Por qué comprar<br>en Mendoza Supply?</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-title">Importador Directo</div>
+        <div class="why-text">Sin intermediarios. Comprás directo al importador y obtenés el mejor precio posible en Mendoza.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-title">Stock Real Disponible</div>
+        <div class="why-text">Todo lo que mostramos está en stock. Sin promesas vacías. Entrega en 24-48hs en Mendoza.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-title">Atención Personalizada</div>
+        <div class="why-text">Te asesoramos por WhatsApp al instante. Sin bots, sin esperas. Atención real de lunes a sábado.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-title">Envíos a Todo el País</div>
+        <div class="why-text">Coordinamos envíos a cualquier provincia. Consultanos por el costo según destino y producto.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <h2 class="cta-title">¿BUSCÁS UN<br><span>PRODUCTO?</span></h2>
+  <p class="cta-sub">Escribinos por WhatsApp y te respondemos en minutos con precio, stock y disponibilidad. Lunes a Sábado de 8 a 20hs.</p>
+  <a class="cta-wa-big" href="https://wa.me/5492614000000?text=Hola%20Mendoza%20Supply!%20Quiero%20hacer%20una%20consulta." target="_blank">
+    <svg class="wa-svg" style="width:24px;height:24px;"><use href="#ico-wa"/></svg>
+    ESCRIBIRNOS AHORA
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">MENDOZA <span>SUPPLY</span></div>
+      <div class="footer-slogan">Importados & Agro · Mendoza, Argentina</div>
+    </div>
+    <div class="footer-contact">
+      <a class="footer-wa" href="https://wa.me/5492614000000" target="_blank">
+        <svg class="wa-svg"><use href="#ico-wa"/></svg>
+        +54 9 261 400-0000
+      </a>
+      <div class="footer-loc">📍 Mendoza, Argentina · Envíos a todo el país</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Mendoza Supply. Todos los derechos reservados.</span>
+    <span>⚠️ Reemplazar número de teléfono antes de publicar</span>
+  </div>
+</footer>
+
+<!-- FLOTANTE WA -->
+<a class="float-wa" href="https://wa.me/5492614000000?text=Hola%20Mendoza%20Supply!" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><use href="#ico-wa"/></svg>
+</a>
+
+</body>
+</html>
